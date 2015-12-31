@@ -1,0 +1,34 @@
+{
+    "name": "techexim/lumen",
+    "description": "Lumen Helpers",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/lumen-framework": "5.1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Long Do",
+            "email": "me@dotronglong.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "TechExim\\Lumen\\": "src",
+            "TechExim\\Lumen\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        }
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.5",
+        "mockery/mockery": "^0.9.4",
+        "phpspec/phpspec": "^2.4",
+        "phpunit/phpunit": "^5.0"
+    }
+}
