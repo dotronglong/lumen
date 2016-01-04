@@ -1,9 +1,12 @@
 <?php namespace TechExim\Lumen\Support\Testing;
 
 use Illuminate\Http\Request;
+use TechExim\Support\Testing\Crawler as BaseCrawler;
 
 trait Crawler
 {
+    use BaseCrawler;
+
     /**
      * Call the given URI and return the Response.
      *
@@ -31,42 +34,5 @@ trait Crawler
         $request = $this->beforeRequest($request);
 
         return $this->response = $this->afterRequest($this->app->prepareResponse($this->app->handle($request)));
-    }
-
-    /**
-     * @param string $method
-     * @param string $uri
-     * @param array  $parameters
-     * @param array  $cookies
-     * @param array  $files
-     * @param array  $server
-     * @param null   $content
-     */
-    protected function prepareRequest($method, $uri, $parameters = [], $cookies = [], $files = [], $server = [],
-                                      $content = null)
-    {
-        return [
-            $method,
-            $uri,
-            $parameters,
-            $cookies,
-            $files,
-            $server,
-            $content
-        ];
-    }
-
-    /**
-     * @param Request $request
-     * @return Request
-     */
-    protected function beforeRequest(Request $request)
-    {
-        return $request;
-    }
-
-    protected function afterRequest($response)
-    {
-        return $response;
     }
 }
